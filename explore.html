@@ -1,0 +1,359 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>REGISTER</title>
+<script>
+function validateForm() 
+{
+  var fn=document.forms["regform"]["fname"].value;
+  var ln=document.forms["regform"]["lname"].value;
+  var gn=document.forms["regform"]["gender"];
+  var em=document.forms["regform"]["email"].value;
+  var pn=document.forms["regform"]["phoneno"].value;
+  var ps=document.forms["regform"]["pass"].value;
+  var cps=document.forms["regform"]["cpass"].value;
+  var pattern=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  var pattern_1=/^[0-9]{10}$/;
+  var pattern_2=/^[a-zA-z0-9]{6,15}$/;
+  
+  
+ 
+ 
+
+if(fn==null||fn=="")
+{
+alert("First name must be field!");
+return false;
+}
+
+if(ln==null||ln=="")
+{
+alert("Last name must be field!");
+return false;
+}
+
+else if((gn[0].checked==false)&&(gn[1].checked==false))
+{
+alert("Please select your gender!");
+return false;
+}
+
+else if(!pattern.test(em))
+{
+alert("Enter valid email address !");
+return false;
+}
+
+
+else if(!pattern_1.test(pn))
+{
+alert("Enter valid phone no !");
+return false;
+}
+
+else if(!pattern_2.test(ps))
+{
+alert(" Enter valid password !");
+return false;
+}
+
+else if(ps!=cps)
+{
+alert("Password did not match.Please re-enter the password.!");
+return false;
+}
+  
+else
+{ 
+alert("Succesfully submitted !");
+}
+
+}
+
+</script>
+   
+<style>
+* {
+ margin: 0;
+padding: 0;
+}
+html{
+overflow-y: scroll;
+scroll-behavior: smooth;
+}
+
+body{
+background-color: rgb(246, 248, 248);
+line-height: 1.6;
+height: 100vh;
+}
+
+
+.navbar{
+position: fixed;
+top: 0;
+z-index: 0;
+display: flex;
+width: 100%;
+height: 71px;
+background: rgba(0,0,0,0.8);
+}
+
+.navbar ul{
+ display: flex;
+ list-style-type: none;
+ width: 100%;
+ overflow: hidden;
+ justfy-content: center;
+}
+
+.navbar ul li {
+  margin: 1 1rem;
+  padding: 1rem;
+  
+}
+
+
+.navbar ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+ 
+
+}
+
+.navbar ul li a:hover {
+  background-color: skyblue;
+  opacity: 0.9;
+}
+
+
+
+.dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: skyblue;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ .header {
+  margin-top:20px;
+  background-color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.header h1{
+  color: #3BB16F;
+}
+
+.header h3{
+  color: #0143B4;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+
+input[type=submit] {
+  background-color: #3C96CB;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+.container img{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+input[type=submit]:hover {
+  background-color: skyblue;
+}
+
+
+.container {
+ 
+  border-radius: 5px;
+  background-color: #F4D661;
+  padding: 0px;
+}
+
+
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 3px;
+  padding: 10px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+.footer {
+  text-align: center;
+  padding: 50px;
+  background: #242424;
+  margin-top: 0px;
+}
+.footer p{
+   color: white;
+  font-size: 1rem; 
+   font-style: italic;
+}
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<nav class="navbar">
+  <img src="https://www.freelogodesign.org/file/app/client/thumb/e0d3b222-9d67-4533-82ca-4f06c0f3edcf_200x200.png?1606378226423" width="180" height="90">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <ul>
+      <li><a href="SIOM.html#home">HOME</a></li>
+      <li><a a target="_self" href="explore.html">REGISTER</a></li>
+      <li class="dropdown">
+       <a href="about.html" class="dropbtn">ABOUT US</a>
+        <div class="dropdown-content">
+        <a href="about.html">CORE TEAM</a>
+        <a href="about.html">ABOUT SIOM</a>
+        </div>
+       </li>
+       <li class="dropdown">
+        <a href="SIOM.html#trainingareas" class="dropbtn">TRAINING AREAS</a>
+        <div class="dropdown-content">
+        <a href="#trainingareas">ADVENTURE COURSES</a>
+        <a href="#trainingareas">TREKS AND HIKES</a>
+        <a href="#trainingareas">MOUNTAINEERING EXPEDITIONS</a>
+        <a href="#trainingareas">TREKS IN SAHYADRI</a>
+        </div>
+       </li>
+      <li><a href="SIOM.html#contactus">CONTACT US</a></li>
+     </ul>
+      
+   </nav>
+
+<div class="header">
+  
+  <h3><br><br>&nbsp;&nbsp;&nbsp;&nbsp;To get all the informations related to Nisarganad treks fill the following form to become a member of the club!</h3>
+</div>
+
+
+<div class="container">
+  <div style="text-align:center">
+    <h2>Registration Form</h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="https://image3.mouthshut.com/images/Restaurant/Photo/-33300_135109.jpg" style="width:100%">
+    </div>
+    <div class="column">
+        <form name="regform" method="post"   action="explore.html" onsubmit="return validateForm()">
+        <label>First Name :</label>
+         	<input type="text" id="fname" name="firstname" placeholder="Enter your name..">
+        <label>Last Name :</label>
+        	<input type="text" id="lname" name="lastname" placeholder="Enter your last name..">
+        <label>Gender :</label><br>
+       		<input type="radio" id="Male" name="gender"><span id="Male">&nbsp;Male</span>&nbsp;&nbsp;
+        	<input type="radio" id="Female" name="gender"><span id="Female">&nbsp;Female</span>&nbsp;&nbsp;<br><br>
+        <label>Email :</label>
+        	<input type="text" id="email" name="email" placeholder="Email address">
+        <label>Phone No.:</label>
+        	<input type="text" id="phoneno" name="phoneno" placeholder="Mobile no">
+        <label>Password :</label>
+        	<input type="password" id="pass" name="password" placeholder="Enter password">
+        <lable>password must be between 6 to 15 characters should not contain space or any special symbol</lable><br>
+        <label>Confirm Password :</label>
+        	<input type="password" id="cpass" name="cpassword" placeholder="Re-enter your password">
+        	<input type="submit" value="Submit">
+     
+    </div>
+  </div>
+</div>
+
+
+
+   <div class="footer">
+  <p>Copyright © 2017-18 All Right Reserved, www.Sahyadrigroup.in
+<br>Maintained by siom & Designed  by Ishwari</p>
+   </div>
+  
+
+</body>
+</html>
